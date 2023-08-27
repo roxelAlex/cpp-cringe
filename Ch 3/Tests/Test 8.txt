@@ -6,4 +6,3 @@ if (myArticleFlags & option_deleted);
 
 // Добавьте строку кода, чтобы открепить статью от закрепленного места
 myArticleFlags &= ~option_favorited;
-
