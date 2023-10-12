@@ -9,7 +9,7 @@
 
 void outputCStyle(char *array)
 {
-    while (*array != 0)
+    while (*array != '/0')
     {
         std::cout << *array << "\n";
         array++;
