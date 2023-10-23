@@ -201,8 +201,8 @@ bool playBlackjack(std::array<Card, 52>& deck)
 {
     Card* cardPtr = &deck[0];
 
-    static int player = 0;
-    static int dealer = 0;
+    int player = 0;
+    int dealer = 0;
     dealer += getCardValue(*cardPtr++);
     player += getCardValue(*cardPtr++);
     player += getCardValue(*cardPtr++);
