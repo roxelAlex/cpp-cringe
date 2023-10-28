@@ -1,3 +1,8 @@
+/*
+Используйте std::sort() и лямбду в следующем коде для сортировки времен
+года по возрастанию средней температуры.
+*/
+
 #include <algorithm>
 #include <array>
 #include <iostream>
@@ -18,10 +23,11 @@ int main()
           {"Winter", 263.0} }
     };
 
+    // Решение задачи начинается здесь.
     std::sort(seasons.begin(), seasons.end(), [](const auto &a, const auto &b)
     {
         return (a.averageTemperature < b.averageTemperature);
-    });
+    }); // И кончается тут.
 
     for (const auto &seasons : seasons)
     {
