@@ -6,6 +6,13 @@ b) Добавьте перегрузку оператора умножения (
 умножения объекта класса Fraction на целочисленное значение и для перемножения
 двух объектов класса Fraction. Используйте способ перегрузки оператора через
 дружественную функцию.
+
+c) Дробь 2/4 — это та же дробь, что и 1/2, только 1/2 не делится до минимальных
+неделимыхзначений. Мы можем уменьшить любую заданную дробь до наименьших значений,
+найдя наибольший общий делитель (НОД) для числителя и знаменателя, а затем
+выполнить деление как числителя, так и знаменателя на НОД.
+Добавьте эту функцию nod() в ваш класс и реализуйте метод reduce(), который будет
+уменьшать дробь. Убедитесь, что дробь будет максимально и корректно уменьшена.
 */
 
 #include <iostream>
@@ -20,12 +27,24 @@ public:
     Fraction(int numerator = 0, int denominator = 1) :
         m_numerator(numerator), m_denominator(denominator)
     {
-
+        reduce();
     }
 
     void print() const
     {
         std::cout << m_numerator << " / " << m_denominator << std::endl;
+    }
+
+     static int nod(int a, int b)
+    {
+        return (b == 0) ? (a > 0 ? a : -a) : nod(b, a % b);
+    }
+
+    void reduce()
+    {
+        int nod = Fraction::nod(m_numerator, m_denominator);
+        m_numerator /= nod;
+        m_denominator /= nod;
     }
 
     friend Fraction operator*(int value, const Fraction& v);
