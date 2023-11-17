@@ -21,7 +21,11 @@ public:
     }
 
     // Метод вывода дроби на экран
-    void print() const
+    void print() const#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+ 
     {
         std::cout << m_numerator << " / " << m_denominator << std::endl;
     }
