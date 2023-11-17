@@ -1,3 +1,7 @@
+/*
+Реализуйте перегрузку унарного оператора плюс (+) для класса Something.
+*/
+
 #include <iostream>
  
 class Something
