@@ -53,7 +53,7 @@ bool operator< (const Car &c1, const Car &c2)
 	return false;
 }
 
-// Перегружаем оператор вывода
+// Перегружаем оператор вывода+
 std::ostream& operator<< (std::ostream &out, const Car &c)
 {
     out << "(" << c.m_company << ", " << c.m_model << ")";
